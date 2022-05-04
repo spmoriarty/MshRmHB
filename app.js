@@ -56,24 +56,25 @@ addFriendButton.addEventListener('click', () => {
 
 function displayFriends() {
     // clear out the friends in DOM
-    friendInputEl.value = '',
+    friendsEl.textContent = '';
     // for each friend in state . . .
     for (let friend of friendData) {
-        renderFriend(friendsEl) {
-            friend.addEventListener('click', ['']  {
-                if (friend.satisfaction =! 3) {
-                    if (mushroomsEl > 0) {
-                        satisfaction++,
-                        else {
-                            return 'no mushrooms left'
-                        }
-                    }
-                };
-            });
-    
-        };
+        const friend1=renderFriend(friendsEl); {
+            friend1.addEventListener('click', () => {
+                if (mushroomCount === 0) {
+                    alert('no more mushrooms');
+                } else if (mushroomCount > 0 && friend.satisfaction < 3) {
+                    friend.satisfaction++;
+                    mushroomCount--;
 
-    };
+                    displayFriends();
+                    displayMushrooms();
+                } 
+                
+            });
+            friendsEl.append(friend1);
+        }
+    }
     //for (let friend of friendData) {
         // use renderFriend to make a friendEl
     // renderFriend(friendsEl);
