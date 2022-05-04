@@ -59,22 +59,22 @@ function displayFriends() {
     friendsEl.textContent = '';
     // for each friend in state . . .
     for (let friend of friendData) {
-        const friend1=renderFriend(friendsEl); {
-            friend1.addEventListener('click', () => {
-                if (mushroomCount === 0) {
-                    alert('no more mushrooms');
-                } else if (mushroomCount > 0 && friend.satisfaction < 3) {
-                    friend.satisfaction++;
-                    mushroomCount--;
+        const friend1 = renderFriend(friend);
+        friend1.addEventListener('click', () => {
+            if (mushroomCount === 0) {
+                alert('no more mushrooms');
+            } else if (mushroomCount > 0 && friend.satisfaction < 3) {
+                friend.satisfaction++;
+                mushroomCount--;
 
-                    displayFriends();
-                    displayMushrooms();
-                } 
+                displayFriends();
+                displayMushrooms();
+            } 
                 
-            });
-            friendsEl.append(friend1);
-        }
+        });
+        friendsEl.append(friend1);
     }
+}
     //for (let friend of friendData) {
         // use renderFriend to make a friendEl
     // renderFriend(friendsEl);
@@ -86,7 +86,7 @@ function displayFriends() {
 
         // append the friendEl to the friends list in DOM
     
-}; 
+ 
 function displayMushrooms() {
     // clear out the mushroom div
 
