@@ -89,8 +89,10 @@ function displayFriends() {
  
 function displayMushrooms() {
     // clear out the mushroom div
-
-    for (let i = 0; i < mushroomCount; i++) {
+    mushroomsEl.textContent = '';
+    for (let i = 0.5; i < mushroomCount; i++) {
+        const mush = renderMushroom(i);
+        mushroomsEl.append(mush);
         // for each mushroom in your mushroom state, render and append a mushroom
     }
 }
